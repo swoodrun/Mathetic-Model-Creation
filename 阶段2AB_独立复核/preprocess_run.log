@@ -1,0 +1,85 @@
+{
+  "counts": {
+    "q1_rows": 144,
+    "actual_rows": 52560,
+    "forecast_hourly_rows": 35040,
+    "forecast_10min_rows": 210240,
+    "hourly_targets_no_actual": 36,
+    "ten_min_targets_no_actual": 216,
+    "anchor_assumption_issues": 1,
+    "evaluation_days": 334,
+    "evaluation_slots": 48096
+  },
+  "descriptive": {
+    "annual_load_kwh": 40524054.95030001,
+    "annual_pv_kwh": 20251242.81168333,
+    "mean_daily_load_kwh": 111024.80808301372,
+    "mean_daily_pv_kwh": 55482.8570183105,
+    "surplus_intervals": 10130,
+    "gross_pv_surplus_kwh": 3120221.003233333,
+    "max_load_daily_date": "2025-07-03",
+    "max_pv_daily_date": "2025-08-03",
+    "price_quantiles": {
+      "0.0": 0.0076,
+      "0.01": 0.244818,
+      "0.5": 0.73845,
+      "0.99": 1.5713459999999977,
+      "1.0": 1.7936
+    },
+    "raw_correlation": {
+      "load_kw": {
+        "load_kw": 1.0,
+        "pv_actual_kw": 0.5728312688181911,
+        "price_actual_yuan_kwh": 0.5077214330493972
+      },
+      "pv_actual_kw": {
+        "load_kw": 0.5728312688181911,
+        "pv_actual_kw": 1.0,
+        "price_actual_yuan_kwh": 0.028430214951258637
+      },
+      "price_actual_yuan_kwh": {
+        "load_kw": 0.5077214330493972,
+        "pv_actual_kw": 0.028430214951258637,
+        "price_actual_yuan_kwh": 1.0
+      }
+    },
+    "month_slot_demeaned_correlation": {
+      "load_kw": {
+        "load_kw": 1.0,
+        "pv_actual_kw": 0.00017153851188497538,
+        "price_actual_yuan_kwh": 0.9328300993662533
+      },
+      "pv_actual_kw": {
+        "load_kw": 0.00017153851188497538,
+        "pv_actual_kw": 1.0,
+        "price_actual_yuan_kwh": -0.23712210637665296
+      },
+      "price_actual_yuan_kwh": {
+        "load_kw": 0.9328300993662533,
+        "pv_actual_kw": -0.23712210637665296,
+        "price_actual_yuan_kwh": 1.0
+      }
+    }
+  },
+  "extreme_flags": {
+    "load_kw": {
+      "lower": -414.24343750000025,
+      "upper": 10069.9990625,
+      "flagged": 0,
+      "action": "retain_descriptive_flag_not_proven_error"
+    },
+    "pv_actual_kw": {
+      "lower": -7355.6020875,
+      "upper": 12259.336812500002,
+      "flagged": 0,
+      "action": "retain_descriptive_flag_not_proven_error"
+    },
+    "price_actual_yuan_kwh": {
+      "lower": -0.40685000000000016,
+      "upper": 1.8879500000000002,
+      "flagged": 0,
+      "action": "retain_descriptive_flag_not_proven_error"
+    }
+  },
+  "elapsed_seconds": 8.14
+}

@@ -1,0 +1,372 @@
+{
+  "sheets": {
+    "附件1.xlsx/Sheet1": {
+      "data_shape": [
+        144,
+        4
+      ],
+      "numeric_columns": {
+        "电价": {
+          "shape": [
+            144,
+            1
+          ],
+          "cells": 144,
+          "original_missing": 0,
+          "nonnumeric_nonmissing": 0,
+          "nonfinite": 0,
+          "negative": 0,
+          "zero": 0,
+          "min": 0.3713,
+          "max": 1.3952,
+          "mean": 0.7661972222222223,
+          "std_population": 0.3132920983382326,
+          "quantiles": {
+            "0.01": 0.396822,
+            "0.25": 0.4363,
+            "0.5": 0.80735,
+            "0.75": 0.984475,
+            "0.99": 1.35187
+          },
+          "duplicate_numeric_rows": 7,
+          "all_zero_rows": 0,
+          "all_zero_columns": 0,
+          "min_cell": {
+            "data_row_1based": 34,
+            "numeric_column_1based": 1,
+            "column_label": "电价",
+            "value": 0.3713
+          },
+          "max_cell": {
+            "data_row_1based": 124,
+            "numeric_column_1based": 1,
+            "column_label": "电价",
+            "value": 1.3952
+          }
+        },
+        "小区负载": {
+          "shape": [
+            144,
+            1
+          ],
+          "cells": 144,
+          "original_missing": 0,
+          "nonnumeric_nonmissing": 0,
+          "nonfinite": 0,
+          "negative": 0,
+          "zero": 0,
+          "min": 3309.3934,
+          "max": 5958.9696,
+          "mean": 4626.0336708333325,
+          "std_population": 977.4711321355107,
+          "quantiles": {
+            "0.01": 3370.993342,
+            "0.25": 3546.0184,
+            "0.5": 4377.57425,
+            "0.75": 5672.895,
+            "0.99": 5943.637079
+          },
+          "duplicate_numeric_rows": 0,
+          "all_zero_rows": 0,
+          "all_zero_columns": 0,
+          "min_cell": {
+            "data_row_1based": 133,
+            "numeric_column_1based": 1,
+            "column_label": "小区负载",
+            "value": 3309.3934
+          },
+          "max_cell": {
+            "data_row_1based": 55,
+            "numeric_column_1based": 1,
+            "column_label": "小区负载",
+            "value": 5958.9696
+          }
+        },
+        "光伏发电预测功率": {
+          "shape": [
+            144,
+            1
+          ],
+          "cells": 144,
+          "original_missing": 0,
+          "nonnumeric_nonmissing": 0,
+          "nonfinite": 0,
+          "negative": 0,
+          "zero": 55,
+          "min": 0.0,
+          "max": 7612.316,
+          "mean": 2311.7848194444446,
+          "std_population": 2854.400161899623,
+          "quantiles": {
+            "0.01": 0.0,
+            "0.25": 0.0,
+            "0.5": 387.61125,
+            "0.75": 5012.76325,
+            "0.99": 7601.960487
+          },
+          "duplicate_numeric_rows": 54,
+          "all_zero_rows": 55,
+          "all_zero_columns": 0,
+          "min_cell": {
+            "data_row_1based": 1,
+            "numeric_column_1based": 1,
+            "column_label": "光伏发电预测功率",
+            "value": 0.0
+          },
+          "max_cell": {
+            "data_row_1based": 73,
+            "numeric_column_1based": 1,
+            "column_label": "光伏发电预测功率",
+            "value": 7612.316
+          }
+        }
+      },
+      "time_grid_correct": true
+    },
+    "附件2.xlsx/小区负载": {
+      "data_shape": [
+        365,
+        145
+      ],
+      "numeric": {
+        "shape": [
+          365,
+          144
+        ],
+        "cells": 52560,
+        "original_missing": 0,
+        "nonnumeric_nonmissing": 0,
+        "nonfinite": 0,
+        "negative": 0,
+        "zero": 0,
+        "min": 1995.7176,
+        "max": 7978.8849,
+        "mean": 4626.033670125571,
+        "std_population": 1411.7323875406,
+        "quantiles": {
+          "0.01": 2409.012422,
+          "0.25": 3517.3475,
+          "0.5": 4270.6836,
+          "0.75": 6138.408125,
+          "0.99": 7312.3768759999975
+        },
+        "duplicate_numeric_rows": 0,
+        "all_zero_rows": 0,
+        "all_zero_columns": 0,
+        "min_cell": {
+          "data_row_1based": 284,
+          "numeric_column_1based": 133,
+          "column_label": "22:10:00",
+          "value": 1995.7176
+        },
+        "max_cell": {
+          "data_row_1based": 197,
+          "numeric_column_1based": 106,
+          "column_label": "17:40:00",
+          "value": 7978.8849
+        }
+      },
+      "date": {
+        "min": "2025-01-01 00:00:00",
+        "max": "2025-12-31 00:00:00",
+        "unique": 365,
+        "invalid": 0,
+        "duplicates": 0,
+        "monotonic": true,
+        "missing_expected": [],
+        "unexpected": []
+      },
+      "time_grid_correct": true
+    },
+    "附件2.xlsx/光伏发电实际功率": {
+      "data_shape": [
+        365,
+        145
+      ],
+      "numeric": {
+        "shape": [
+          365,
+          144
+        ],
+        "cells": 52560,
+        "original_missing": 0,
+        "nonnumeric_nonmissing": 0,
+        "nonfinite": 0,
+        "negative": 0,
+        "zero": 23540,
+        "min": 0.0,
+        "max": 10216.2,
+        "mean": 2311.7857090962707,
+        "std_population": 2948.6386878814424,
+        "quantiles": {
+          "0.01": 0.0,
+          "0.25": 0.0,
+          "0.5": 18.8589,
+          "0.75": 4903.734725,
+          "0.99": 8904.692938999995
+        },
+        "duplicate_numeric_rows": 0,
+        "all_zero_rows": 0,
+        "all_zero_columns": 43,
+        "min_cell": {
+          "data_row_1based": 1,
+          "numeric_column_1based": 1,
+          "column_label": "00:10:00",
+          "value": 0.0
+        },
+        "max_cell": {
+          "data_row_1based": 116,
+          "numeric_column_1based": 69,
+          "column_label": "11:30:00",
+          "value": 10216.2
+        }
+      },
+      "date": {
+        "min": "2025-01-01 00:00:00",
+        "max": "2025-12-31 00:00:00",
+        "unique": 365,
+        "invalid": 0,
+        "duplicates": 0,
+        "monotonic": true,
+        "missing_expected": [],
+        "unexpected": []
+      },
+      "time_grid_correct": true
+    },
+    "附件3.xlsx/Sheet1": {
+      "data_shape": [
+        1460,
+        26
+      ],
+      "numeric": {
+        "shape": [
+          1460,
+          24
+        ],
+        "cells": 35040,
+        "original_missing": 0,
+        "nonnumeric_nonmissing": 0,
+        "nonfinite": 0,
+        "negative": 0,
+        "zero": 17525,
+        "min": 0.0,
+        "max": 9995.8875,
+        "mean": 2279.8011315325343,
+        "std_population": 2934.0137945183233,
+        "quantiles": {
+          "0.01": 0.0,
+          "0.25": 0.0,
+          "0.5": 0.0,
+          "0.75": 4740.548275,
+          "0.99": 9209.775
+        },
+        "duplicate_numeric_rows": 0,
+        "all_zero_rows": 0,
+        "all_zero_columns": 0,
+        "min_cell": {
+          "data_row_1based": 1,
+          "numeric_column_1based": 1,
+          "column_label": "预报1小时",
+          "value": 0.0
+        },
+        "max_cell": {
+          "data_row_1based": 400,
+          "numeric_column_1based": 18,
+          "column_label": "预报18小时",
+          "value": 9995.8875
+        }
+      },
+      "date": {
+        "min": "2025-01-01 00:00:00",
+        "max": "2025-12-31 00:00:00",
+        "unique": 365,
+        "invalid": 0,
+        "duplicates": 0,
+        "monotonic": true,
+        "missing_expected": [],
+        "unexpected": []
+      },
+      "blank_date_cells": 1095,
+      "targets_outside_actual_coverage": 36
+    },
+    "附件4.xlsx/Sheet1": {
+      "data_shape": [
+        365,
+        145
+      ],
+      "numeric": {
+        "shape": [
+          365,
+          144
+        ],
+        "cells": 52560,
+        "original_missing": 0,
+        "nonnumeric_nonmissing": 0,
+        "nonfinite": 0,
+        "negative": 0,
+        "zero": 0,
+        "min": 0.0076,
+        "max": 1.7936,
+        "mean": 0.7661976046423136,
+        "std_population": 0.3406700960727655,
+        "quantiles": {
+          "0.01": 0.244818,
+          "0.25": 0.4537,
+          "0.5": 0.73845,
+          "0.75": 1.0274,
+          "0.99": 1.5713459999999977
+        },
+        "duplicate_numeric_rows": 0,
+        "all_zero_rows": 0,
+        "all_zero_columns": 0,
+        "min_cell": {
+          "data_row_1based": 116,
+          "numeric_column_1based": 72,
+          "column_label": "12:00:00",
+          "value": 0.0076
+        },
+        "max_cell": {
+          "data_row_1based": 184,
+          "numeric_column_1based": 124,
+          "column_label": "20:40:00",
+          "value": 1.7936
+        }
+      },
+      "date": {
+        "min": "2025-01-01 00:00:00",
+        "max": "2025-12-31 00:00:00",
+        "unique": 365,
+        "invalid": 0,
+        "duplicates": 0,
+        "monotonic": true,
+        "missing_expected": [],
+        "unexpected": []
+      },
+      "time_grid_correct": true
+    }
+  },
+  "alignment": {
+    "load_pv_dates_identical": true,
+    "load_price_dates_identical": true,
+    "load_pv_time_headers_identical": true,
+    "load_price_time_headers_identical": true,
+    "daily_points": 144,
+    "actual_points": 52560,
+    "output_days": 334,
+    "output_points_per_annual_strategy": 48096,
+    "first_interval_assumed": "2025-01-01 00:00/00:10",
+    "last_interval_assumed": "2025-12-31 23:50/2026-01-01 00:00"
+  },
+  "boundary_checks": {
+    "pv_after_1800_positive_points": 1759,
+    "pv_after_1800_positive_days": 365,
+    "pv_after_1800_max_kw": 1062.3324,
+    "pv_after_1800_max_date": "2025-07-01",
+    "pv_after_1800_max_end_time": "18:10:00",
+    "release1800_remaining_hourly_positive_points": 20,
+    "release1800_remaining_hourly_max_kw": 8.7375,
+    "price_below_005_count": 9
+  },
+  "source_hashes_unchanged": true,
+  "elapsed_seconds": 2.839
+}

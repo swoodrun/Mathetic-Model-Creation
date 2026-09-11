@@ -1,0 +1,305 @@
+{
+  "passed": true,
+  "check_count": 58,
+  "checks": [
+    {
+      "name": "audit_scope",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "audit_manifest",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "audit_runtime",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "audit_randomness",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "audit_sheets",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "audit_templates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "audit_pdf",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "audit_alignment",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "audit_cross_file_profile_check",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "audit_boundary_checks",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "audit_source_hashes_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all_source_hashes_current",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "delivery_manifest_42_files",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "byte_equal_data/actual_10min.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "byte_equal_data/evaluation_calendar.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "byte_equal_data/fixed_tariff_q2_q3.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "byte_equal_data/pv_forecast_10min.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "byte_equal_data/pv_forecast_hourly.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "byte_equal_data/q1_inputs.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "byte_equal_data/time_mapping.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "byte_equal_eda/correlation_month_slot_demeaned.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "byte_equal_eda/correlation_raw.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "byte_equal_eda/daily_summary.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "byte_equal_eda/extreme_examples.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "byte_equal_eda/extreme_flags_retained.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "byte_equal_eda/forecast_errors_evaluation_only.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "byte_equal_eda/interpolation_metrics.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "byte_equal_eda/intraday_mean.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "byte_equal_eda/monthly_summary.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "byte_equal_eda/paired_hourly_release_metrics.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "byte_equal_eda/weekday_summary.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "summary_except_elapsed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "preprocess_30_checks",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rerun_saved_28_checks",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "raw_cells_load_kw",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "raw_cells_pv_actual_kw",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "raw_cells_price_actual_yuan_kwh",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all_timestamp_endpoints",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "observations_available_at_end",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "interval_start_and_operating_date",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "energy_net_sign_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q1_raw_cells",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fixed_tariff_only_given_price",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "every_hourly_forecast_raw_value",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "every_linear_interpolation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "every_step_interpolation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "forecast_issue_target_alignment",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "forecast_availability_exact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "only_initial_anchor_assumption",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "within_issue_day_all_rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "every_evaluation_truth_matches_source",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all_errors_sign_and_missing",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "out_of_range_not_zero_filled",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "error_availability_exact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "2026_midnight_four_valid_versions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all_interpolation_metric_rows",
+      "passed": true,
+      "detail": 96
+    },
+    {
+      "name": "january_supports_fri_sat_low_pattern",
+      "passed": true,
+      "detail": {
+        "0": 126503.91657083335,
+        "1": 126570.92739583334,
+        "2": 126610.20574333335,
+        "3": 126779.58839333332,
+        "4": 80919.14540333333,
+        "5": 81335.51170416665,
+        "6": 126697.33516666667
+      }
+    },
+    {
+      "name": "source_files_still_unchanged",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "statement": "Source-to-delivery deterministic verification; no optimization or strategy backtest performed."
+}
