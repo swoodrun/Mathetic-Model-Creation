@@ -1,0 +1,59 @@
+{
+  "scope": "artificial_formula_checks_only",
+  "seed": 2026,
+  "checks": [
+    {
+      "name": "A_B_epigraph_equal_piecewise",
+      "passed": true,
+      "cases": 1000
+    },
+    {
+      "name": "B_decrease_dominated_regular_cost",
+      "passed": true,
+      "cases": 1000
+    },
+    {
+      "name": "fee_hand_examples",
+      "passed": true,
+      "cases": 3
+    },
+    {
+      "name": "feedback_physical_constraints_two_efficiencies",
+      "passed": true,
+      "cases": 2000
+    },
+    {
+      "name": "LP_cycle_projection_two_efficiencies",
+      "passed": true,
+      "cases": 2000
+    },
+    {
+      "name": "discrete_CVaR_fractional_tail",
+      "passed": true,
+      "cases": 18
+    },
+    {
+      "name": "CVaR_ties_and_fractional_mass",
+      "passed": true,
+      "cases": 2
+    },
+    {
+      "name": "newsvendor_uniform_reference_80_percent",
+      "passed": true,
+      "cases": 101
+    },
+    {
+      "name": "fixed_controller_prefix_invariance",
+      "passed": true,
+      "cases": 2
+    },
+    {
+      "name": "config_matches_design",
+      "passed": true,
+      "cases": 1
+    }
+  ],
+  "passed": true,
+  "contest_data_used": false,
+  "optimization_run": false
+}
