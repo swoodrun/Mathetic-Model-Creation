@@ -1,0 +1,389 @@
+{
+  "status": "final_design_frozen_not_fitted_or_solved",
+  "version": "stage3-final-v3",
+  "time": {
+    "step_hours": 0.16666666666666666,
+    "slots_per_day": 144,
+    "endpoint": "right",
+    "release_hours": [
+      0,
+      6,
+      12,
+      18
+    ],
+    "evaluation_start": "2025-02-01",
+    "evaluation_end": "2025-12-31",
+    "interpretation": "right_endpoint_working_assumption_not_officially_resolved",
+    "control_timing": "ten_minute_idealized_response_and_end_of_interval_settlement_replay",
+    "mapping_file": "C题工作区/阶段3_最终定稿/time_mapping_final.csv"
+  },
+  "battery": {
+    "capacity_kwh": 12000,
+    "minimum_kwh": 1200,
+    "maximum_kwh": 10800,
+    "initial_kwh": 6000,
+    "power_limit_kw": 5000,
+    "eta_charge": 0.9,
+    "eta_discharge": 0.9,
+    "alternative_efficiency": "eta_charge=eta_discharge=sqrt(0.9)"
+  },
+  "settlement": {
+    "main": "B_no_refund",
+    "sensitivity": "A_refund_then_half_penalty",
+    "revisions": "final_effective_minus_original_plan_once_per_delivery",
+    "emergency_multiplier": 5,
+    "increase_multiplier": 1.5,
+    "decrease_multiplier_B": 0.5,
+    "decrease_multiplier_A": -0.5,
+    "price_basis": "delivery_interval",
+    "spill": "all_surplus_free_no_sale"
+  },
+  "forecast": {
+    "load_main": "same_weekday_same_slot_mean",
+    "load_window_complete_days": 28,
+    "fallback_complete_days": 7,
+    "pv_q2_complete_days": 7,
+    "pv_q3": "latest_authorized_linear_with_observed_anchor",
+    "price_main": "geometric_mean_same_slot",
+    "price_complete_days": 7,
+    "within_day_load_update": false,
+    "within_day_price_update": false,
+    "first_archive_issue_date": "2025-01-02",
+    "calendar_weekend_is_load_class": false
+  },
+  "scenarios": {
+    "max_complete_paths": 30,
+    "weight": "equal",
+    "load_pv_error_sign": "actual_minus_forecast",
+    "load_pv_error_unit": "kwh",
+    "price_error": "log(actual)-log(forecast)",
+    "group": "same_historical_day_decision_hour_source_release_hour_and_target_slot",
+    "availability": "complete_remaining_issue_day_realized",
+    "physical_projection": "load_pv_max_zero_price_exponential_with_diagnostics",
+    "random_seed_for_price_permutation": 2026,
+    "source_future_truth_allowed": false,
+    "invalid_price_rule": "any_nonfinite_or_nonpositive_price_rejects_entire_pool; use_single_point_path_fallback; do_not_selectively_drop_extreme_paths",
+    "projection_diagnostics": {
+      "variables": [
+        "load_projection_kwh",
+        "pv_projection_kwh"
+      ],
+      "point_ratio": "count(X_raw<0)/(S*H)",
+      "energy_ratio": "sum((-X_raw)_+)/max(sum(abs(X_raw)),1e-9)",
+      "point_ratio_warning_threshold": 0.05,
+      "energy_ratio_warning_threshold": 0.01,
+      "on_exceed": "reject_entire_pool_and_use_uncorrected_point_path_b0; compare_keep_and_change_normally; retain_current_policy",
+      "thresholds_are_engineering_diagnostics": true
+    },
+    "cold_start_metadata": [
+      "training_count_by_slot",
+      "fallback_flag",
+      "release_hour",
+      "issue_date"
+    ],
+    "zero_valid_paths": "uncorrected_single_point_path_b0_lambda0_keep_current_policy_and_normal_trigger",
+    "annual_fallback_decision_fraction_warning": 0.1,
+    "on_high_fallback_fraction": "report_coverage_inadequacy_and_diagnose_before_enhancement_claims; no_retrospective_threshold_tuning"
+  },
+  "candidates": {
+    "include_uncorrected": true,
+    "quantiles": [
+      0.5,
+      0.8,
+      0.9
+    ],
+    "quantile_method": "linear",
+    "max_dayahead": 12,
+    "max_intraday_including_keep": 25,
+    "include_current_policy": true,
+    "keep_reference_virtual_shortfall": true,
+    "margin_policy": "signed_raw_quantile_correction_no_clipping",
+    "quantile_correction_formula": "N_tilde = N_hat + Q_alpha(residual_actual_minus_forecast_kwh)",
+    "fixed_a_reference": {
+      "enabled": true,
+      "net_load_surplus_deficit_definition": "s=(a-N_tilde)_+, q=(N_tilde-a)_+",
+      "balance_constraints": [
+        "c+w=s",
+        "d+v=q"
+      ],
+      "v_role": "deficit_shortfall_only",
+      "virtual_charge_forbidden": true,
+      "retain_soc_bounds_and_power_limit": true,
+      "free_a_reference_v_near_zero_check": true
+    },
+    "deduplication": {
+      "max_segment_abs_difference_kwh": 1e-06,
+      "policy_identity_fields": [
+        "a",
+        "E_star",
+        "b_kwh",
+        "controller_id"
+      ]
+    },
+    "candidate_counts_note": "4 net-load targets x 3 b values = 12 day-ahead; 4 change targets x 3 b + 4 keep targets x 3 b + current policy = 25 intraday",
+    "free_a_reference": {
+      "virtual_shortfall_fixed_zero": true,
+      "balance": "a+d=N_tilde+c+w",
+      "optional_debug_v_must_be_near_zero": true
+    },
+    "reference_release_kwh": [
+      0,
+      600,
+      9600
+    ]
+  },
+  "risk": {
+    "main_lambda": 0,
+    "enhancement_lambdas": [
+      0.1,
+      0.3
+    ],
+    "beta": 0.9,
+    "minimum_paths_for_positive_lambda": 20,
+    "below_minimum_lambda": 0,
+    "zero_paths": "uncorrected_single_point_path_b0_lambda0_with_current_policy_and_normal_trigger",
+    "terminal_target_kwh": 6000,
+    "terminal_kappa": "eta_discharge*median(dayahead_full_day_price_center)",
+    "kappa_multiplier_sensitivity": [
+      0,
+      1,
+      2
+    ],
+    "intraday_kappa_fixed": true,
+    "main_trigger_yuan": 0,
+    "trigger_sensitivity_yuan": 10,
+    "tie_tolerance_yuan": 1e-06,
+    "tie_rule": "keep_then_candidate_id",
+    "terminal_penalty_role": "terminal_inventory_deviation_regularizer",
+    "terminal_penalty_target_is_not_hard_constraint": true,
+    "cvar_small_sample_note": "beta=0.9 with 20-30 paths exposes approximately 2-3 tail paths; exploratory only",
+    "path_stability_check": {
+      "required_when_positive_lambda_reported": true,
+      "dates": [
+        "2025-03-20",
+        "2025-06-21",
+        "2025-09-23",
+        "2025-12-21"
+      ],
+      "release_hours": [
+        0,
+        6,
+        12,
+        18
+      ],
+      "mode": "fixed_candidate_set_leave_one_complete_day_out_reweight_rescore",
+      "separate_optional_mode": "regenerate_candidates_and_rescore"
+    },
+    "trigger_rule": "switch only if delta_J > epsilon + tie_tolerance_yuan; otherwise keep",
+    "terminal_band_sensitivity": {
+      "enabled_in_main": false,
+      "required_single_factor_comparison": true,
+      "lower_kwh": 5000,
+      "upper_kwh": 7000,
+      "formula": "kappa*((5000-E)_+ + (E-7000)_+)",
+      "apply_to": [
+        "reference_generation",
+        "scenario_score"
+      ]
+    }
+  },
+  "warmup": {
+    "first_day_regular_plan_kwh": 0,
+    "later_plan": "previous_day_positive_net_load",
+    "reference_floor": "battery_minimum",
+    "shared_initial_state_all_battery_policies": true,
+    "exclude_january_cost_from_evaluation": true
+  },
+  "baselines": {
+    "uncorrected_b_kwh": 0,
+    "fixed_margin_fraction": 0.1,
+    "fixed_margin_scale": "mean_previous_up_to_7_complete_days_positive_net_load_same_slot",
+    "fixed_margin_b_kwh": 0,
+    "risk_hyperparameter_selection": "none_first_run_fixed_separate_policies"
+  },
+  "validation": {
+    "energy_tolerance_kwh": 1e-06,
+    "cost_absolute_tolerance_yuan": 0.0001,
+    "cost_relative_tolerance": 1e-10,
+    "check_frozen_plan_future_truth_invariance": true,
+    "solver_status_must_be_recorded": true
+  },
+  "implementation": {
+    "planned_solver": "scipy_highs",
+    "environment_status": "not_prepared_by_final_design_task",
+    "actual_optimization_run": false,
+    "actual_backtest_run": false
+  },
+  "information": {
+    "availability_columns": {
+      "actual": "observation_available_at",
+      "forecast": "available_at",
+      "error": "error_available_at"
+    },
+    "historical_day_path_group": "same_historical_day_decision_hour_source_release_hour_and_target_slot",
+    "future_truth_forbidden": true,
+    "all_pv_subset_experiments_keep_replan_opportunities_equal": true,
+    "old_forecast_reanchor_at_current_observation": false,
+    "residual_source_must_match_allowed_forecast_age": true
+  },
+  "experiments": {
+    "matched_state_and_information": {
+      "P0": {
+        "new_pv_forecast": false,
+        "reference_replan": false,
+        "intraday_trade": false
+      },
+      "P1": {
+        "new_pv_forecast": false,
+        "reference_replan": true,
+        "intraday_trade": false,
+        "residual_source": "zero_hour_issue_sliced_to_current_remaining_slots"
+      },
+      "P2": {
+        "new_pv_forecast": true,
+        "reference_replan": true,
+        "intraday_trade": false
+      },
+      "P3": {
+        "new_pv_forecast": true,
+        "reference_replan": true,
+        "intraday_trade": true
+      }
+    },
+    "E02_decomposition": {
+      "fixed_b_plan_comparison": [
+        0
+      ],
+      "b_set_comparison": [
+        [
+          0
+        ],
+        [
+          0,
+          600
+        ],
+        [
+          0,
+          600,
+          9600
+        ]
+      ],
+      "same_candidate_set_point_vs_scenario_scoring": true,
+      "point_vs_scenario_same_target_set_and_controller": true
+    },
+    "shapley_information_members": [
+      6,
+      12,
+      18
+    ],
+    "shapley_subset_count": 8
+  },
+  "innovations": {
+    "soft_economic_reserve": {
+      "enabled": false,
+      "theta": 1.0,
+      "delta_kwh": 100,
+      "value_update": "hourly_knots_hold_for_next_6_ten_minute_steps",
+      "value_source": "legal_fixed_purchase_reference_LP_suffix_value",
+      "marginal_value_formula": "max(0,(V(E_star-delta)-V(E_star))/delta)",
+      "boundary_rule": "use_feasible_forward_difference at minimum",
+      "controller_comparison": [
+        "hard_b0",
+        "hard_b600",
+        "greedy_physical_minimum",
+        "soft_reserve"
+      ],
+      "no_future_truth_or_clairvoyant_scenario_value": true,
+      "priority": "conditional_after_baseline_and_diagnostics",
+      "reserve_reference_b_kwh": 600,
+      "value_information": "entire_hourly_mu_vector_computed_at_tau_no_new_tail_truth",
+      "suffix_excludes_current_step": true,
+      "candidate_count_separate_from_main": true
+    },
+    "pv_information_shapley": {
+      "enabled": false,
+      "members": [
+        6,
+        12,
+        18
+      ],
+      "subset_count": 8,
+      "contract": "B_no_refund",
+      "lambda": 0,
+      "efficiency": "main",
+      "all_replan_opportunities_equal": true,
+      "valuation": "raw_payment_first; C_nu=C-nu*E_end sensitivity separately",
+      "inventory_nu_multipliers": [
+        0,
+        1,
+        2
+      ],
+      "no_per_subset_retrospective_tuning": true,
+      "priority": "first_deepening_after_required_comparisons",
+      "controller": "main_hard_reference_b_set_0_600_9600",
+      "empty_subset_is_not_P0": true,
+      "residual_source_must_match_allowed_forecast_age": true,
+      "inventory_nu_base": "eta_discharge*median(attachment1_tariff)",
+      "compute_budget_fallback": "four_nested_subsets_with_order_dependence_disclosed_no_shapley_claim"
+    },
+    "emergency_diagnostics": {
+      "required": true,
+      "extra_discharge_kwh": "min(h,M-d,eta_discharge*max(E_end-Emin,0))",
+      "avoidance_cost": "5*p*extra_discharge",
+      "interpretation": "one_step_physical_substitutability_not_free_annual_savings"
+    },
+    "capacity_sensitivity": {
+      "enabled": false,
+      "scope": "Q1_first",
+      "capacity_factors": [
+        0.8,
+        1,
+        1.2
+      ],
+      "minimum_fraction": 0.1,
+      "maximum_fraction": 0.9,
+      "initial_and_terminal_fraction": 0.5,
+      "power_limit_kw_fixed": 5000,
+      "capital_payback_not_estimated": true
+    },
+    "price_volatility_sensitivity": {
+      "enabled": false,
+      "gamma": [
+        0.5,
+        1,
+        1.5
+      ],
+      "formula": "daily_arithmetic_mean_p * exp(gamma*(log_p-mean_log_p))/daily_mean_exp",
+      "full_day_statistics_used_only_for_offline_world_generation": true,
+      "rebuild_causal_forecasts_and_archives_per_world": true
+    }
+  },
+  "provenance": {
+    "assembled_from": "stage3_config_v2_review_张.json plus current final decisions",
+    "canonical_document": "C题最终方案_阶段3定稿.md",
+    "source_manifest": "source_manifest.json",
+    "design_contract_only": true,
+    "not_executable_algorithm": true
+  },
+  "export": {
+    "source_workbooks_unchanged": true,
+    "generated_workbook_labels": "canonical_natural_day_from_time_mapping_final",
+    "preserve_sheet_structure_and_slot_order": true,
+    "adjustment_table_quantity": "final_total_a",
+    "net_adjustment_ledger": "a-g",
+    "planned_daily_fee": "sum(p*g)",
+    "adjusted_daily_fee": "sum(F(g,a,p))",
+    "actual_total_fee_ledger": "sum(F+5*p*h)",
+    "evaluation_days": 334,
+    "slots_per_day": 144,
+    "storage_blocks_per_day": 6,
+    "ellipsis_rows": "expand_to_all_days",
+    "emergency_events": "merge_consecutive_positive_intervals_within_same_day"
+  },
+  "data": {
+    "actual": "C题组员支援/阶段2B/C题_阶段2B_标准数据与复现材料/data/actual_10min.csv",
+    "q1": "C题组员支援/阶段2B/C题_阶段2B_标准数据与复现材料/data/q1_inputs.csv",
+    "pv_forecast": "C题组员支援/阶段2B/C题_阶段2B_标准数据与复现材料/data/pv_forecast_10min.csv",
+    "dictionary": "C题工作区/阶段2AB_独立复核/数据字典_复核修订版.md"
+  }
+}

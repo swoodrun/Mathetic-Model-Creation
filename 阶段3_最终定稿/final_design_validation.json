@@ -1,0 +1,134 @@
+{
+  "scope": "final_design_artifacts_and_artificial_formula_checks_only",
+  "seed": 2026,
+  "passed": true,
+  "check_groups": 24,
+  "checks": [
+    {
+      "name": "source_manifest_current",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "mapping_144_consecutive_intervals",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "mapping_three_boundaries",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "source_labels_retained_canonical_export",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "signed_correction_and_candidate_counts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fixed_a_reference_and_free_a_v_zero",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "data_files_accessible",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "old_forecast_residual_age_and_no_reanchor",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "old_virtual_charge_has_false_incentive",
+      "passed": true,
+      "detail": "a=N=0, E=5000, c=v=100; old terminal savings minus cost=76 yuan"
+    },
+    {
+      "name": "new_zero_surplus_forbids_virtual_charge",
+      "passed": true,
+      "detail": "c+w=0 and d+v=0 imply all four variables zero"
+    },
+    {
+      "name": "fixed_a_zero_action_always_feasible",
+      "passed": true,
+      "detail": "1000 artificial cases, unchanged admissible E"
+    },
+    {
+      "name": "signed_median_corrects_high_forecast",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "full_release_floor",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "feedback_physical_two_efficiencies_three_reserves",
+      "passed": true,
+      "detail": "2000 artificial cases"
+    },
+    {
+      "name": "greedy_example_supplies_gap",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fees_epigraph_matches_piecewise",
+      "passed": true,
+      "detail": "1000 artificial cases"
+    },
+    {
+      "name": "cycle_removal_preserves_energy",
+      "passed": true,
+      "detail": "1000 artificial cases"
+    },
+    {
+      "name": "fractional_CVaR_and_ties",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "terminal_band",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "soft_reserve_threshold_matches_piecewise_minimum",
+      "passed": true,
+      "detail": "1000 artificial cases; value estimator not implemented"
+    },
+    {
+      "name": "eight_subsets_shapley_efficiency_and_negative_value",
+      "passed": true,
+      "detail": {
+        "6": 14.0,
+        "12": 23.999999999999996,
+        "18": -3.0
+      }
+    },
+    {
+      "name": "synthetic_price_mean_and_identity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "design_not_solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "document_math_delimiters_balanced",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "contest_optimization": false,
+  "annual_backtest": false
+}

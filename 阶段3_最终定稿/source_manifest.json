@@ -1,0 +1,47 @@
+[
+  {
+    "file": "C题组员支援\\阶段3\\stage3_config_v2_review_张.json",
+    "bytes": 9297,
+    "sha256": "aff3dac7090f672117663a094e49ceac427defaabde91343fd08fe03b6da256a"
+  },
+  {
+    "file": "C题组员支援\\阶段3\\阶段3_复核与改进方案_张.md",
+    "bytes": 21727,
+    "sha256": "bbebb66a9df6c1964fdca439de85d170424779ed3d34d9a104ab497a1b8ffda8"
+  },
+  {
+    "file": "C题组员支援\\阶段3\\阶段3_模型方案复核结果_Zhan.md",
+    "bytes": 13165,
+    "sha256": "7eaa599974cb1ddf26542e211d3165cad9f40c3d523ab5b070087d062d42c4da"
+  },
+  {
+    "file": "C题工作区\\阶段3_模型方案设计\\阶段3_模型方案设计.md",
+    "bytes": 24189,
+    "sha256": "dd8ba625525829769f7751a133f8b6d96c0113010895937e8e97d360f2448798"
+  },
+  {
+    "file": "C题工作区\\阶段3_模型方案设计\\stage3_config.json",
+    "bytes": 3347,
+    "sha256": "3c178d6f065d811c9df81f1698d917cae8f3164043da89809d625675a36aaccf"
+  },
+  {
+    "file": "C题工作区\\阶段2AB_独立复核\\independent_review.json",
+    "bytes": 6629,
+    "sha256": "f2266d7073a0573f948d73c6e50ca839f606b8e075dd90aab2342685a26bc808"
+  },
+  {
+    "file": "C题组员支援\\阶段2B\\C题_阶段2B_标准数据与复现材料\\data\\time_mapping.csv",
+    "bytes": 5873,
+    "sha256": "4f4f7147ba93fccde6cbef017ff62bf5335000f00630897ac3d7d0aa7ec6da7c"
+  },
+  {
+    "file": "2026年数模题目和论文格式规范\\C题\\C题.pdf",
+    "bytes": 354389,
+    "sha256": "2c098f6ae9dd47ae965aebdec3b9facf3de6c173f999783c1012c08fc5fb9d2d"
+  },
+  {
+    "file": "C题最终方案_阶段3定稿.md",
+    "bytes": 25985,
+    "sha256": "2af6854d2342eb707f44ee98c5aa3c140c74cd47933a5a778f6b25641a5e893b"
+  }
+]
